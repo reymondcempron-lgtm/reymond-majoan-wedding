@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reymond &amp; Ma. Joan — Our Wedding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- WEDDING INTRO ANIMATION -->
+<button class="skip" onclick="closeIntro()">Tap to skip</button>
+
+  <div id="intro">
+    <div class="ground"></div>
+
+    <!-- BRIDE -->
+    <div class="figure bride">
+      <svg viewBox="0 0 108 210" fill="none">
+        <!-- veil -->
+        <path d="M54 30 C 30 34, 22 66, 30 96" stroke="var(--gold)" stroke-width="1.2" opacity="0.55"/>
+        <path d="M54 30 C 78 34, 86 66, 78 96" stroke="var(--gold)" stroke-width="1.2" opacity="0.55"/>
+        <!-- dress -->
+        <path d="M54 46 C 40 46, 36 60, 30 90 C 22 128, 16 168, 14 206 L 94 206 C 92 168, 86 128, 78 90 C 72 60, 68 46, 54 46 Z"
+              fill="var(--rose)" opacity="0.85" stroke="var(--rose-deep)" stroke-width="1.2"/>
+        <path d="M54 46 C 48 70, 48 140, 54 206" stroke="var(--rose-deep)" stroke-width="1" opacity="0.4"/>
+        <!-- bodice -->
+        <path d="M54 46 C 44 46, 40 54, 40 62 L 68 62 C 68 54, 64 46, 54 46 Z" fill="var(--cream)" opacity="0.9"/>
+        <!-- arm holding bouquet -->
+        <path d="M40 66 C 30 76, 26 86, 30 96" stroke="var(--rose-deep)" stroke-width="6" stroke-linecap="round" opacity="0.85"/>
+        <!-- bouquet -->
+        <g transform="translate(28,96)">
+          <circle cx="0" cy="0" r="5" fill="var(--gold)"/>
+          <circle cx="-6" cy="4" r="4.2" fill="var(--rose-deep)"/>
+          <circle cx="6" cy="4" r="4.2" fill="var(--rose-deep)"/>
+          <circle cx="0" cy="8" r="4.2" fill="var(--gold)"/>
+        </g>
+        <!-- head -->
+        <circle cx="54" cy="26" r="15" fill="#F3E3D3"/>
+        <path d="M40 22 C 40 10, 68 10, 68 22 C 68 16, 40 16, 40 22 Z" fill="#4A342A"/>
+      </svg>
+    </div>
+
+    <!-- GROOM -->
+    <div class="figure groom">
+      <svg viewBox="0 0 108 210" fill="none">
+        <!-- suit body -->
+        <path d="M54 46 C 34 48, 28 58, 28 76 L 24 206 L 84 206 L 80 76 C 80 58, 74 48, 54 46 Z"
+              fill="var(--ink)" opacity="0.92"/>
+        <!-- lapel -->
+        <path d="M54 48 L 44 68 L 54 84 L 64 68 Z" fill="#2C2220"/>
+        <!-- shirt -->
+        <path d="M48 50 L 54 66 L 60 50 L 54 46 Z" fill="var(--cream)"/>
+        <!-- tie -->
+        <path d="M51 54 L 57 54 L 55 92 L 53 92 Z" fill="var(--gold)"/>
+        <!-- arm -->
+        <path d="M28 78 C 22 88, 20 96, 24 104" stroke="#241B19" stroke-width="7" stroke-linecap="round" opacity="0.9"/>
+        <!-- head -->
+        <circle cx="54" cy="26" r="15" fill="#E9C9A6"/>
+        <path d="M39 20 C 39 8, 69 8, 69 20 C 69 14, 39 14, 39 20 Z" fill="#2A2119"/>
+      </svg>
+    </div>
+
+    <div class="spark"></div>
+    <div id="burst"></div>
+
+    <div class="reveal">
+      <div class="mono">R &amp; M</div>
+      <div class="mono"> YOU ARE CORDIALLY INVITED TO OUR WEDDING.</div>
+      <div class="names">Reymond &amp; Ma. Joan</div>
+      <div class="date">28 · 11 · 2026</div>
+    </div>
+  </div>
+
+
+<nav>
+  <div class="wrap">
+    <a href="#story">Our Story</a>
+    <a href="#details">Details</a>
+    <a href="#entourage">Entourage</a>
+    <a href="#motif">Dress Code</a>
+    <a href="#rsvp">RSVP</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#registry">Registry</a>
+    <a href="#travel">Travel</a>
+    <a href="#faq">FAQ</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="couple1.png" alt="Reymond and Ma. Joan" class="hero-bg">
+  <div class="frame"></div>
+</header>
+
+<section id="countdown" style="padding:64px 0; border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head" style="margin-bottom:32px;">
+      <p class="sub" style="margin-top:0;">Counting down to</p>
+      <h2 style="font-size:28px;">November 28, 2026</h2>
+    </div>
+    <div id="countdown-grid" class="countdown-grid">
+      <div class="cd-unit"><span class="cd-num" id="cd-days">00</span><span class="cd-label">Days</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-hours">00</span><span class="cd-label">Hours</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-mins">00</span><span class="cd-label">Minutes</span></div>
+      <div class="cd-unit"><span class="cd-num" id="cd-secs">00</span><span class="cd-label">Seconds</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="head">
+      <h2>Our Love Story</h2>
+      <p class="sub">A few moments along the way</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="year">2019</div>
+        <div class="body">
+          <h3>Where It All Began</h3>
+          <p>Our story began in the simplest and most unexpected way—with a college project and an email account.</p>
+          <p>We first got to know each other through a common friend who was close to both of us. An instructor required a project to be submitted through email, but one of us did not have an email account yet. With a little help from our common friend, an account was created—and somehow, that simple moment became the beginning of our story.</p>
+          <p>As we exchanged the details needed for the account, we also started getting to know each other. Soon, simple conversations turned into meaningful ones, and we began sharing more moments together.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="year">2019</div>
+        <div class="body">
+          <h3>January 25, 2019 — The Sweetest "Yes"</h3>
+          <p>Then came the moment that changed everything.</p>
+          <p>On January 25, 2019, at exactly 10:22 AM, a sweet "Yes" was received through a text message.</p>
+          <p>Later that same day, we met at school and confirmed that yes in person. There were smiles, a little happiness, and a moment that quietly marked the beginning of our journey together. And just like that, we went back to our classes—perhaps unaware that such a simple moment would become one of the most important memories of our lives.</p>
+          <p>We would sometimes walk together toward the gate after class before going our separate ways. They were ordinary moments at the time, but they eventually became memories we would always treasure.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="year">2019–2025</div>
+        <div class="body">
+          <h3>The Years That Followed</h3>
+          <p>Through the years, we celebrated anniversaries, created countless memories, and found a special place where we loved to visit and pray—God the Father in Fatima, Inabanga.</p>
+          <p>Our journey was not always easy. We experienced distance, different schedules, school and work responsibilities, and eventually the challenges brought by the COVID-19 pandemic.</p>
+          <p>There were disagreements, arguments, misunderstandings, and moments when we almost gave up. But through every challenge, we continued to choose each other, learn, forgive, and grow together.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="year">2025</div>
+        <div class="body">
+          <h3>December 8, 2025 — The Engagement</h3>
+          <p>After years of memories, challenges, prayers, and dreams for the future, we got engaged on December 8, 2025.</p>
+          <p>We started preparing for this next chapter with what we had—our small savings and our humble salaries. Little by little, we saved, sacrificed, and worked toward the wedding we had been praying for.</p>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="year">2026</div>
+        <div class="body">
+          <h3>Our Forever Begins</h3>
+          <p>As we prepare to celebrate our wedding on November 28, 2026, we look back with grateful hearts at how far we have come.</p>
+          <p>Our story has never been perfect, but it has always been ours. We learned that love is not only found in happy moments, but also in choosing to stay, understand, forgive, pray, and grow together.</p>
+          <p>With God at the center of our plans, we are ready to begin the next chapter of our lives together.</p>
+          <p>From a simple email account in 2019, to a sweet "Yes" at 10:22 AM, to a lifetime together in 2026—this is our story, and this is only the beginning of our forever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="details" style="background:var(--blush); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Wedding Details</h2>
+      <p class="sub">Saturday, November 28, 2026</p>
+    </div>
+    <div class="details-grid">
+      <div class="card">
+        <span class="time">Ceremony · 8:30 AM</span>
+        <h3>Immaculate Conception Parish</h3>
+        <p>Church wedding ceremony</p>
+        <p>Officiated by Rev. Fr. Jojo Solana</p>
+      </div>
+      <div class="card">
+        <span class="time">Reception</span>
+        <h3>Inabanga Pavilion</h3>
+        <p>Dinner, toasts, and celebration to follow</p>
+      </div>
+      <div class="card">
+        <span class="time">Attire</span>
+        <h3>Dress Code</h3>
+        <p>Dark to light brown, champagne, beige, and white</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="entourage" style="background:var(--blush); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Our Entourage</h2>
+      <p class="sub">With gratitude to those standing beside us</p>
+    </div>
+
+    <div class="entourage-group">
+      <h3 class="ent-role">Parents of the Groom</h3>
+      <p class="ent-names">Mr. Renato Cempron & Mrs. Rosana Cempron</p>
+    </div>
+    <div class="entourage-group">
+      <h3 class="ent-role">Parents of the Bride</h3>
+      <p class="ent-names">Mr. Warlito Vistal & Mrs. Demetria Vistal</p>
+    </div>
+
+    <div class="entourage-group">
+      <h3 class="ent-role">Principal Sponsors</h3>
+      <div class="ent-pairs">
+        <p>Rosa Villa O. Rabina &amp; Rogelio C. Rabina</p>
+        <p>Cresencio Vistal &amp; Anabel Vistal</p>
+        <p>Feriliano Bautista &amp; Virginia Bautista</p>
+        <p>Anecito Nineria &amp; Angelie Nineria</p>
+        <p>Mr. Mansueto Basilan &amp; Adolfa Basilan</p>
+        <p>Mr. Efren Nineria &amp; Mrs. Pinkai Nineria</p>
+        <p>Mr. Romeo Legaspi &amp; Mrs. Nerissa Legaspi</p>
+        <p>Presentacion Rico &amp; Admir Rico</p>
+        <p>Primitivo Cempron &amp; Isabelita Cempron</p>
+        <p>Lilito Bautista &amp; Lene Bautista</p>
+        <p>Atty. Norman Torregosa &amp; Mrs. Ana Marie Torregosa</p>
+        <p>Rene Ochia</p>
+        <p>Maria Saco</p>
+        <p>Josie Millanes</p>
+      </div>
+    </div>
+
+    <div class="entourage-columns">
+      <div class="entourage-group">
+        <h3 class="ent-role">Best Man</h3>
+        <p class="ent-names">Dilmar Saladores</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Maid of Honor</h3>
+        <p class="ent-names">Erla Jane Bautista</p>
+      </div>
+    </div>
+
+    <div class="entourage-columns">
+      <div class="entourage-group">
+        <h3 class="ent-role">Groomsmen</h3>
+        <p class="ent-names">Mike Van Vistal · Mark John Vistal · Mark Jayson Vistal · Maison Vistal · Johnrey Cempron · Angelo Suarez · Rolando Bautista · John Gabriel Piastro</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Bridesmaids</h3>
+        <p class="ent-names">Mary Jean Vistal · Crystal Jane Cempron · Daisyrie Cempron · Ritchel Cempron · Renrose Cempron · Christine Vistal · Ma. Cristina Cempron · Louela Bautista</p>
+      </div>
+    </div>
+
+    <div class="entourage-columns">
+      <div class="entourage-group">
+        <h3 class="ent-role">Bible Bearer</h3>
+        <p class="ent-names">Rev Niño Lopez</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Coin Bearer</h3>
+        <p class="ent-names">Nigel Duran</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Ring Bearer</h3>
+        <p class="ent-names">Gein Alexander Tampos</p>
+      </div>
+    </div>
+
+    <div class="entourage-group">
+      <h3 class="ent-role">Flower Girls</h3>
+      <p class="ent-names">Hera Natalia Manggay · Lara Cempron · Crisia Mae Historia · Zakiyah Brielle A. Maurin · Crystal Jade Suarez · Lourine Mae Historia</p>
+    </div>
+
+    <div class="entourage-columns">
+      <div class="entourage-group">
+        <h3 class="ent-role">Candle Sponsors</h3>
+        <p class="ent-names">Michael Hordista &amp; Pamela Malubay</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Veil Sponsors</h3>
+        <p class="ent-names">Ma. Roxan Lopez &amp; Yaweh Lopez</p>
+      </div>
+      <div class="entourage-group">
+        <h3 class="ent-role">Cord Sponsors</h3>
+        <p class="ent-names">Genalou Tampos &amp; Melvin Tampos</p>
+      </div>
+    </div>
+
+    <div class="entourage-group">
+      <h3 class="ent-role">Liturgical Readers</h3>
+      <p class="ent-names">1st Reading — Feriliano Bautista · 2nd Reading — Kaye Bautista · Psalm — Danica Therese Perono · Prayers of the Faithful — Esmeralda Manliguez · Commentator — Host Jude</p>
+    </div>
+  </div>
+</section>
+
+<section id="motif">
+  <div class="wrap">
+    <div class="head">
+      <h2>Dress Code &amp; Motif</h2>
+      <p class="sub">Dark to Light Brown, Champagne &amp; Beige — Garden Formal</p>
+    </div>
+
+    <blockquote class="motif-quote">
+      We would love to see you in formal or semi-formal attire, in shades of dark to light brown, champagne, beige, or white.
+    </blockquote>
+
+    <div class="motif-toggle" role="tablist">
+      <button type="button" class="motif-tab active" data-mode="formal">Formal</button>
+      <button type="button" class="motif-tab" data-mode="semiformal">Semi-Formal</button>
+    </div>
+
+    <div class="swatch-row">
+      <button type="button" class="swatch" style="--sw:#4A2E1F" data-color="Espresso"
+        data-formal="Think a deep espresso-brown suit or a flowing espresso gown with gold accessories."
+        data-semiformal="An espresso linen shirt with tailored trousers, or an espresso midi dress.">
+        <span class="dot"></span><span class="swatch-name">Espresso</span>
+      </button>
+      <button type="button" class="swatch" style="--sw:#A9744F" data-color="Chestnut"
+        data-formal="A chestnut-brown suit or a floor-length chestnut gown."
+        data-semiformal="A chestnut button-down or a knee-length chestnut dress.">
+        <span class="dot"></span><span class="swatch-name">Chestnut</span>
+      </button>
+      <button type="button" class="swatch" style="--sw:#E6D9B0" data-color="Champagne"
+        data-formal="A champagne satin gown or a champagne vest under a classic tux."
+        data-semiformal="A champagne blouse or a light champagne linen suit.">
+        <span class="dot"></span><span class="swatch-name">Champagne</span>
+      </button>
+      <button type="button" class="swatch" style="--sw:#D8C3A5" data-color="Beige"
+        data-formal="A beige slip gown or a beige tie with a tailored brown suit."
+        data-semiformal="A beige sundress or beige chinos with a soft linen top.">
+        <span class="dot"></span><span class="swatch-name">Beige</span>
+      </button>
+      <button type="button" class="swatch" style="--sw:#FAF7F2" data-color="White"
+        data-formal="A white suit or a white gown with delicate gold jewelry (please leave bridal white to the bride)."
+        data-semiformal="A white linen shirt or a white sundress.">
+        <span class="dot"></span><span class="swatch-name">White</span>
+      </button>
+    </div>
+
+    <p class="motif-inspiration" id="motif-inspiration">Tap a colour to see outfit ideas</p>
+  </div>
+</section>
+
+<section id="rsvp">
+  <div class="wrap">
+    <div class="head">
+      <h2>RSVP</h2>
+      <p class="sub">Kindly confirm your attendance through the form below.</p>
+    </div>
+
+    <div class="rsvp-card" style="max-width:850px; margin:0 auto;">
+      <div style="text-align:center; margin-bottom:18px;">
+        <p style="margin:0 0 8px; color:var(--forest); font-size:1.05rem;">
+          We would love to celebrate this special day with you.
+        </p>
+        <p style="margin:0; color:var(--forest-soft);">
+          Please complete our wedding attendance form below. Your response will be recorded directly in our Google Form.
+        </p>
+      </div>
+
+      <!--
+        The Google Form is embedded directly instead of submitting a custom
+        HTML form to formResponse. This keeps the Google Form's required fields
+        and validation intact and makes sure responses are recorded correctly.
+      -->
+      <div style="width:100%; overflow:hidden; border:1px solid var(--line); border-radius:14px; background:#fff;">
+        <iframe
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdWnIfo8cpoH4v3swOvhOkmK63Tbegu0SmwFghwpa7-ClcoCQ/viewform?embedded=true"
+          title="Wedding Attendance Confirmation"
+          style="width:100%; min-height:850px; border:0; display:block;"
+          loading="lazy">
+          Loading RSVP form…
+        </iframe>
+      </div>
+
+      <div style="text-align:center; margin-top:18px;">
+        <p style="margin:0 0 10px; color:var(--forest-soft); font-size:.95rem;">
+          Having trouble viewing the form?
+        </p>
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdWnIfo8cpoH4v3swOvhOkmK63Tbegu0SmwFghwpa7-ClcoCQ/viewform"
+          target="_blank"
+          rel="noopener"
+          class="btn-secondary">
+          Open RSVP Form
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="gallery" style="background:var(--blush); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Gallery</h2>
+      <p class="sub">A few of our favorite moments together</p>
+    </div>
+    <div class="gallery">
+      <img class="ph" src="gallery-1.jpg" alt="Reymond and Ma. Joan at sunset by the beach">
+      <img class="ph" src="gallery-2.jpg" alt="Reymond and Ma. Joan laughing on the red bridge">
+      <img class="ph" src="gallery-3.jpg" alt="Reymond and Ma. Joan on the mangrove boardwalk">
+      <img class="ph" src="gallery-4.jpg" alt="Reymond and Ma. Joan at the Chocolate Hills">
+    </div>
+  </div>
+</section>
+
+<section id="guest-photos">
+  <div class="wrap">
+    <div class="head">
+      <h2>Share Your Photos</h2>
+      <p class="sub">A shared album for everything you capture on the day</p>
+    </div>
+    <div class="photo-cta">
+      <p>Snap away during the ceremony and reception — every photo you add to our shared album will show up for everyone to enjoy, and we'll treasure seeing the day through your eyes.</p>
+      <div class="photo-cta-buttons">
+        <a href="https://photos.app.goo.gl/q4tG72L5mNdbCoSe8" target="_blank" rel="noopener" class="btn-primary">Add Your Photos</a>
+        <a href="https://photos.app.goo.gl/q4tG72L5mNdbCoSe8" target="_blank" rel="noopener" class="btn-secondary">View the Album</a>
+      </div>
+      <div id="photo-qrcode" class="photo-qr"></div>
+      <p class="photo-note">Scan on your phone to jump straight to the album, or bookmark it before the wedding day.</p>
+    </div>
+  </div>
+</section>
+
+<section id="qr">
+  <div class="wrap qr-box">
+    <div class="head" style="margin-bottom:24px;">
+      <h2>Mobile Invitation</h2>
+      <p class="sub">Scan to open this website on your phone</p>
+    </div>
+    <div id="qrcode"></div>
+    <p>Print this QR code on your paper invitations so guests can scan straight through to your wedding website — replace the link in the code with your live site URL once it's published.</p>
+  </div>
+</section>
+
+<section id="registry" style="background:var(--blush); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Registry</h2>
+      <p class="sub">Your presence is the greatest gift — but if you'd like to give more</p>
+    </div>
+    <div class="registry-grid">
+      <div class="registry-item">
+        <h3>Home &amp; Kitchen</h3>
+        <span class="coming-soon">Details coming soon</span>
+      </div>
+      <div class="registry-item">
+        <h3>Honeymoon Fund</h3>
+        <span class="coming-soon">Details coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+<!--
+<section id="travel">
+  <div class="wrap">
+    <div class="head">
+      <h2>Travel &amp; Accommodations</h2>
+      <p class="sub">Getting to Inabanga Pavilion</p>
+    </div>
+    <div class="travel-item">
+      <h3>Recommended Hotel</h3>
+      <p>Accommodation recommendations will be posted here once confirmed.</p>
+      <p>Room block details will be added once confirmed.</p>
+    </div>
+    <div class="travel-item">
+      <h3>Getting There</h3>
+      <p>Airport and transportation details will be added once confirmed.</p>
+      <p>Directions and shuttle details will be shared closer to the date</p>
+    </div>
+    <div class="travel-item">
+      <h3>Parking</h3>
+      <p>On-site parking is available at Inabanga Pavilion</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--blush); border-top:1px solid var(--line); border-bottom:1px solid var(--line);">
+  <div class="wrap">
+    <div class="head">
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <details open>
+      <summary>Is there a plus-one?</summary>
+      <p>Plus-ones are noted individually on your invitation. Please check your envelope or reach out if you're unsure.</p>
+    </details>
+    <details>
+      <summary>Are children welcome?</summary>
+      <p>We love your little ones, but our wedding will be an adults-only celebration, with the exception of immediate family.</p>
+    </details>
+    <details>
+      <summary>What's the weather like in November?</summary>
+      <p>Expect warm days and mild evenings. We recommend a light layer for after sunset.</p>
+    </details>
+    <details>
+      <summary>Is the venue accessible?</summary>
+      <p>We're confirming accessibility details at Inabanga Pavilion — reach out if you have specific needs and we'll make sure you're taken care of.</p>
+    </details>
+  </div>
+</section>
+-->
+<footer>
+  We can't wait to celebrate with you.
+</footer>
+
+<script>
+const totalMs = 6400;
+  let navigated = false;
+
+  function closeIntro(){
+    if (navigated) return;
+    navigated = true;
+    document.body.classList.remove("intro-active");
+    var intro = document.getElementById("intro");
+    if (intro) { intro.classList.add("intro-leaving"); setTimeout(function(){ intro.remove(); }, 900); }
+    var skip = document.querySelector(".skip");
+    if (skip) skip.remove();
+  }
+  setTimeout(closeIntro, totalMs + 200);
+
+  // ---- flower burst, fired the instant the couple meets ----
+  const flowerSVG = `
+    <svg viewBox="0 0 24 24">
+      <g>
+        <circle cx="12" cy="7" r="4" fill="var(--rose)"/>
+        <circle cx="12" cy="17" r="4" fill="var(--rose)"/>
+        <circle cx="7" cy="12" r="4" fill="var(--rose-deep)"/>
+        <circle cx="17" cy="12" r="4" fill="var(--rose-deep)"/>
+        <circle cx="12" cy="12" r="3.4" fill="var(--gold)"/>
+      </g>
+    </svg>`;
+
+  function startBurst(){
+    const burst = document.getElementById('burst');
+    const count = 22;
+    const baseDist = Math.max(90, Math.min(window.innerWidth, window.innerHeight) * 0.32);
+
+    for (let i = 0; i < count; i++){
+      const angle = (360 / count) * i + (Math.random() * 12 - 6);
+      const dist = baseDist * (0.65 + Math.random() * 0.55);
+      const rad = angle * Math.PI / 180;
+      const tx = Math.cos(rad) * dist;
+      const ty = Math.sin(rad) * dist * 0.72; // flatten vertically a touch
+
+      const wrap = document.createElement('div');
+      wrap.className = 'petal-wrap';
+      const inner = document.createElement('div');
+      inner.className = 'petal-inner';
+      inner.innerHTML = flowerSVG;
+      wrap.appendChild(inner);
+      burst.appendChild(wrap);
+
+      const dur = 1500 + Math.random() * 500;
+      const delay = i * 18 + Math.random() * 120;
+      const spin = (Math.random() < 0.5 ? 1 : -1) * (60 + Math.random() * 120);
+      const startScale = 0.15 + Math.random() * 0.15;
+
+      inner.animate([
+        { transform:`translate(0px,0px) scale(${startScale}) rotate(0deg)`, opacity:0 },
+        { transform:`translate(${tx*0.55}px,${ty*0.55}px) scale(1) rotate(${spin*0.5}deg)`, opacity:1, offset:0.32 },
+        { transform:`translate(${tx}px,${ty}px) scale(0.9) rotate(${spin}deg)`, opacity:1, offset:0.72 },
+        { transform:`translate(${tx*1.1}px,${ty*1.1}px) scale(0.7) rotate(${spin*1.15}deg)`, opacity:0 }
+      ], { duration:dur, delay, easing:'cubic-bezier(.2,.7,.25,1)', fill:'forwards' });
+    }
+  }
+
+  setTimeout(startBurst, 2250);
+</script>
+
+<script>
+  // Dress code / motif interactivity
+  (function(){
+    var mode = "formal";
+    var tabs = document.querySelectorAll(".motif-tab");
+    var swatches = document.querySelectorAll(".swatch");
+    var inspiration = document.getElementById("motif-inspiration");
+    var activeSwatch = null;
+
+    tabs.forEach(function(tab){
+      tab.addEventListener("click", function(){
+        tabs.forEach(function(t){ t.classList.remove("active"); });
+        tab.classList.add("active");
+        mode = tab.dataset.mode;
+        if (activeSwatch){
+          inspiration.textContent = activeSwatch.dataset[mode];
+        }
+      });
+    });
+
+    swatches.forEach(function(sw){
+      sw.addEventListener("click", function(){
+        swatches.forEach(function(s){ s.classList.remove("active"); });
+        sw.classList.add("active");
+        activeSwatch = sw;
+        inspiration.textContent = sw.dataset[mode];
+      });
+    });
+  })();
+
+  // Countdown to the wedding date — update this if the date changes
+  var weddingDate = new Date("2026-11-28T00:00:00");
+  function updateCountdown(){
+    var now = new Date();
+    var diff = weddingDate - now;
+    if (diff <= 0){
+      document.getElementById("countdown-grid").innerHTML =
+        '<p style="grid-column:1/-1; font-family:\'Cormorant Garamond\', serif; font-size:24px; color:var(--forest);">Today\'s the day!</p>';
+      return;
+    }
+    var days = Math.floor(diff / (1000*60*60*24));
+    var hours = Math.floor((diff / (1000*60*60)) % 24);
+    var mins = Math.floor((diff / (1000*60)) % 60);
+    var secs = Math.floor((diff / 1000) % 60);
+    document.getElementById("cd-days").textContent = String(days).padStart(2,"0");
+    document.getElementById("cd-hours").textContent = String(hours).padStart(2,"0");
+    document.getElementById("cd-mins").textContent = String(mins).padStart(2,"0");
+    document.getElementById("cd-secs").textContent = String(secs).padStart(2,"0");
+  }
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  new QRCode(document.getElementById("qrcode"), {
+    text: "https://YOUR-VERCEL-URL.vercel.app",
+    width: 160,
+    height: 160,
+    colorDark: "#2E3B2C",
+    colorLight: "#ffffff"
+  });
+
+  new QRCode(document.getElementById("photo-qrcode"), {
+    text: "https://photos.app.goo.gl/q4tG72L5mNdbCoSe8",
+    width: 140,
+    height: 140,
+    colorDark: "#2E3B2C",
+    colorLight: "#ffffff"
+  });
+</script>
+
+</body>
+</html>

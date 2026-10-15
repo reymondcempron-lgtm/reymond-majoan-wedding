@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reymond &amp; Ma. Joan — Welcome</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ivory:#FAF6EF;
+    --forest:#2E3B2C;
+    --forest-soft:#4A5B45;
+    --gold:#A8863F;
+    --gold-soft:#C9AC72;
+    --blush:#E7DED0;
+    --line:#DCD2BE;
+  }
+  *{ box-sizing:border-box; }
+  html,body{
+    margin:0; padding:0; min-height:100%;
+    overflow-x:hidden; overflow-y:auto;
+    background:var(--ivory);
+    font-family:'EB Garamond', serif;
+  }
+  .stage{
+    position:relative;
+    width:100%; min-height:100vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    padding:40px 24px;
+    background:
+      radial-gradient(ellipse at 50% 15%, rgba(168,134,63,0.10), transparent 55%),
+      radial-gradient(ellipse at 50% 100%, rgba(46,59,44,0.06), transparent 60%),
+      var(--ivory);
+  }
+  .frame-border{
+    position:absolute; inset:22px;
+    border:1px solid var(--line);
+    pointer-events:none;
+    z-index:2;
+  }
+  .frame-border::before{
+    content:"";
+    position:absolute; inset:6px;
+    border:1px solid var(--gold-soft);
+    opacity:0.5;
+  }
+
+  /* PETALS */
+  .petal{
+    position:fixed;
+    top:-24px;
+    width:14px; height:14px;
+    pointer-events:none;
+    z-index:1;
+    animation:fall linear infinite;
+    opacity:0.7;
+  }
+  .petal svg{ width:100%; height:100%; display:block; }
+  @keyframes fall{
+    0%{ transform:translateY(-24px) rotate(0deg); }
+    100%{ transform:translateY(110vh) rotate(360deg); }
+  }
+
+  /* PHOTO */
+  .photo-wrap{
+    position:relative;
+    z-index:3;
+    width:340px; height:340px;
+    border-radius:50%;
+    opacity:0;
+    transform:translateY(36px) scale(0.85);
+    animation:reveal-photo 1.1s ease forwards;
+    animation-delay:0.3s;
+    background:
+      linear-gradient(
+        rgba(250,246,239,0.08),
+        rgba(250,246,239,0.08)
+      ),
+      url('couple-photo.jpg') center/cover no-repeat;
+    border:1px solid var(--gold-soft);
+    box-shadow:0 0 0 10px var(--ivory), 0 0 0 11px var(--line), 0 25px 60px rgba(46,59,44,0.18);
+  }
+  @keyframes reveal-photo{
+    to{ opacity:1; transform:translateY(0) scale(1); }
+  }
+
+  .eyebrow{
+    position:relative; z-index:3;
+    font-style:italic; color:var(--forest-soft);
+    font-size:16px; letter-spacing:0.02em;
+    margin-top:24px;
+    opacity:0;
+    animation:reveal-up 0.9s ease forwards;
+    animation-delay:1.1s;
+  }
+  h1{
+    position:relative; z-index:3;
+    font-family:'Tangerine', cursive;
+    font-weight:700; color:var(--forest);
+    font-size:82px; line-height:0.95;
+    margin:4px 0 0 0;
+    opacity:0;
+    animation:reveal-up 0.9s ease forwards;
+    animation-delay:1.4s;
+  }
+  .amp{ color:var(--gold); font-family:'Tangerine', cursive; font-size:64px; margin:0 6px; }
+
+  .date-line{
+    position:relative; z-index:3;
+    font-size:14px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--forest-soft);
+    margin-top:16px;
+    opacity:0;
+    animation:reveal-up 0.9s ease forwards;
+    animation-delay:1.7s;
+  }
+
+  .enter-btn{
+    position:relative; z-index:3;
+    display:inline-block;
+    margin-top:32px;
+    padding:14px 38px;
+    background:transparent;
+    border:1px solid var(--forest);
+    color:var(--forest);
+    text-decoration:none;
+    font-family:'EB Garamond', serif;
+    font-size:13px; letter-spacing:0.16em; text-transform:uppercase;
+    opacity:0;
+    animation:reveal-up 0.9s ease forwards;
+    animation-delay:2.1s;
+    transition:background .25s ease, color .25s ease;
+  }
+  .enter-btn:hover{ background:var(--forest); color:var(--ivory); }
+
+  @keyframes reveal-up{
+    from{ opacity:0; transform:translateY(14px); }
+    to{ opacity:1; transform:translateY(0); }
+  }
+
+  @media(max-width:520px){
+    .photo-wrap{ width:220px; height:220px; }
+    h1{ font-size:56px; }
+    .amp{ font-size:44px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="stage">
+  <div class="frame-border"></div>
+
+  <div class="photo-wrap"></div>
+
+  <div class="eyebrow">Together with their families</div>
+  <h1>Reymond <span class="amp">&amp;</span> Ma. Joan</h1>
+  <div class="date-line">November 28, 2026</div>
+
+  <a href="index.html" class="enter-btn" id="enter-btn">Enter Our Story</a>
+</div>
+
+<script>
+  // Falling flower petals (SVG for reliable rendering across browsers)
+  var petalSVG = '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10 2 C13 2 15 5 13 9 C17 8 19 11 17 14 C19 17 16 19 13 17 C13 20 9 20 9 17 C6 19 3 17 5 14 C1 13 2 9 6 9 C3 6 6 2 10 2 Z" fill="#C9AC72"/></svg>';
+
+  function createPetal(){
+    var petal = document.createElement("div");
+    petal.className = "petal";
+    petal.innerHTML = petalSVG;
+    petal.style.left = (Math.random() * 100) + "vw";
+    var size = 10 + Math.random() * 10;
+    petal.style.width = size + "px";
+    petal.style.height = size + "px";
+    petal.style.animationDuration = (7 + Math.random() * 8) + "s";
+    petal.style.opacity = 0.45 + Math.random() * 0.4;
+    document.body.appendChild(petal);
+    setTimeout(function(){ petal.remove(); }, 16000);
+  }
+  // ---- Move on to the main website (index.html) ----
+  // Guests can tap "Enter Our Story" any time; otherwise they go in automatically.
+  var AUTO_ENTER_SECONDS = 120;   // <- change this number to shorten/lengthen the stay (120 = 2 minutes)
+  var going = false;
+  function goToSite(){
+    if (going) return;
+    going = true;
+    try { sessionStorage.setItem("rmw_entered", "1"); } catch(e){}
+    window.location.href = "index.html";
+  }
+  document.getElementById("enter-btn").addEventListener("click", function(e){
+    e.preventDefault();
+    goToSite();
+  });
+  setTimeout(goToSite, AUTO_ENTER_SECONDS * 1000);
+
+  setInterval(createPetal, 500);
+  for (var i = 0; i < 8; i++){ setTimeout(createPetal, i * 250); }
+</script>
+
+</body>
+</html>
